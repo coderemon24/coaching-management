@@ -27,9 +27,6 @@ Premium multi-page static template using:
   pricing.html
   terms.html
   portal.html
-  /components
-    header.html
-    footer.html
   /css
     main.css
   /js
@@ -49,7 +46,7 @@ Premium multi-page static template using:
   - Hotline placeholders: +880 1700-xxxxxx
   - Payment methods: bKash, Nagad
 
-## Shared Components
+## Shared Layout
 
 - Sticky navbar with CTA: `Admission`, `Call Now`
 - Mobile drawer menu
@@ -74,7 +71,7 @@ Premium multi-page static template using:
 
 ## Run Locally
 
-Use a local server so jQuery `.load()` can fetch `components/header.html` and `components/footer.html`.
+Run with a local server for best compatibility (routing, assets, and browser security policies).
 
 Example:
 

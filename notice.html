@@ -11,7 +11,84 @@
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-  <div id="site-header"></div>
+<header class="sticky top-0 z-50 border-b" style="background: color-mix(in srgb, var(--surface-solid), transparent 14%); border-color: var(--border); backdrop-filter: blur(10px);">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8" aria-label="Main Navigation">
+    <a href="index.html" class="flex items-center gap-3" aria-label="Prime Scholar Coaching Home">
+      <span class="grid h-11 w-11 place-items-center rounded-2xl brand-gradient text-slate-900 font-black">PS</span>
+      <span>
+        <span class="block text-sm font-semibold tracking-wide text-muted">Dhaka Coaching</span>
+        <span class="block text-lg font-extrabold leading-none">Prime Scholar</span>
+      </span>
+    </a>
+
+    <div class="desktop-nav hidden items-center gap-6 lg:flex">
+      <a class="nav-link" data-nav="index.html" href="index.html">Home</a>
+      <a class="nav-link" data-nav="about.html" href="about.html">About</a>
+      <a class="nav-link" data-nav="programs.html" href="programs.html">Programs</a>
+      <a class="nav-link" data-nav="schedule.html" href="schedule.html">Schedule</a>
+      <a class="nav-link" data-nav="teachers.html" href="teachers.html">Teachers</a>
+      <a class="nav-link" data-nav="results.html" href="results.html">Results</a>
+      <a class="nav-link" data-nav="contact.html" href="contact.html">Contact</a>
+    </div>
+
+    <div class="hidden items-center gap-2 lg:flex">
+      <button class="btn btn-outline p-2" type="button" data-theme-toggle aria-label="Toggle dark mode">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+      </button>
+      <a class="btn btn-outline" href="admission.html">Admission</a>
+      <a class="btn btn-primary" href="tel:+8801700000000">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 4.5A2.25 2.25 0 0 1 4.5 2.25h3A2.25 2.25 0 0 1 9.75 4.5v1.5a2.25 2.25 0 0 1-1.523 2.139l-.68.228a12.04 12.04 0 0 0 8.086 8.086l.228-.68A2.25 2.25 0 0 1 18 14.25h1.5A2.25 2.25 0 0 1 21.75 16.5v3A2.25 2.25 0 0 1 19.5 21.75h-1.125C9.369 21.75 2.25 14.631 2.25 5.625V4.5z"/></svg>
+        Call Now
+      </a>
+    </div>
+
+    <div class="mobile-only flex items-center gap-2 lg:hidden">
+      <button class="btn btn-outline p-2" type="button" data-theme-toggle aria-label="Toggle dark mode">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+      </button>
+      
+      <button id="openDrawer" class="btn btn-outline p-2" type="button" 
+      aria-label="Toggle menu" aria-controls="mobileDrawer" aria-expanded="false">
+        <span class="hamburger" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      
+    </div>
+  </nav>
+</header>
+
+<div id="drawerBackdrop" class="drawer-backdrop"></div>
+<aside id="mobileDrawer" class="mobile-drawer surface-solid p-6">
+  <div class="mb-6 flex items-center justify-between">
+    <p class="text-lg font-bold">Menu</p>
+    <button id="closeDrawer" class="btn btn-outline p-2" type="button" aria-label="Close menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="space-y-2">
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="index.html" href="index.html">Home</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="about.html" href="about.html">About</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="programs.html" href="programs.html">Programs</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="schedule.html" href="schedule.html">Batch Schedule</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="teachers.html" href="teachers.html">Teachers</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="admission.html" href="admission.html">Admission</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="results.html" href="results.html">Results</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="notice.html" href="notice.html">Notices</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="gallery.html" href="gallery.html">Gallery</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="blog.html" href="blog.html">Blog</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="faq.html" href="faq.html">FAQ</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="pricing.html" href="pricing.html">Pricing</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="portal.html" href="portal.html">Student Portal</a>
+    <a class="block rounded-xl px-3 py-2 nav-link" data-nav="contact.html" href="contact.html">Contact</a>
+  </div>
+  <div class="mt-8 space-y-2">
+    <a href="admission.html" class="btn btn-secondary w-full">Admission</a>
+    <a href="tel:+8801700000000" class="btn btn-primary w-full">Call Now</a>
+  </div>
+</aside>
 
   <main class="px-4 py-12 lg:px-8">
     <section class="reveal mx-auto max-w-7xl">
@@ -64,7 +141,61 @@
     </section>
   </main>
 
-  <div id="site-footer"></div>
+<footer class="mt-16 border-t" style="border-color: var(--border);">
+  <div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 lg:grid-cols-4 lg:px-8">
+    <section>
+      <h3 class="text-xl font-extrabold">Prime Scholar Coaching</h3>
+      <p class="mt-3 text-sm text-muted">Smart coaching for SSC, HSC, Admission. শিখি ধারণা থেকে, শুধু মুখস্থ না।</p>
+      <div class="mt-4 space-y-2 text-sm">
+        <p><strong>Hotline:</strong> +880 1700-000000</p>
+        <p><strong>Email:</strong> hello@primescholar.edu.bd</p>
+      </div>
+      <div class="mt-4 flex gap-2">
+        <a href="#" class="btn btn-outline p-2" aria-label="Facebook">FB</a>
+        <a href="#" class="btn btn-outline p-2" aria-label="YouTube">YT</a>
+        <a href="#" class="btn btn-outline p-2" aria-label="LinkedIn">IN</a>
+      </div>
+    </section>
+
+    <section>
+      <h4 class="text-lg font-bold">Dhaka Branches</h4>
+      <ul class="mt-3 space-y-2 text-sm text-muted">
+        <li>Dhanmondi 27, Dhaka</li>
+        <li>Mirpur 10, Dhaka</li>
+        <li>Uttara Sector 7, Dhaka</li>
+        <li>Farmgate, Dhaka</li>
+      </ul>
+      <a href="contact.html" class="mt-4 inline-flex text-sm font-semibold" style="color: var(--primary);">View all branches</a>
+    </section>
+
+    <section>
+      <h4 class="text-lg font-bold">Newsletter</h4>
+      <p class="mt-3 text-sm text-muted">Weekly routine + notice update পেতে email দিন।</p>
+      <form class="needs-validation mt-4 space-y-3" aria-label="Newsletter form">
+        <label class="sr-only" for="newsletterEmail">Email</label>
+        <input id="newsletterEmail" class="input" type="email" placeholder="guardian@email.com" required />
+        <p class="field-error">Email is required</p>
+        <button class="btn btn-primary w-full" type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <section>
+      <h4 class="text-lg font-bold">Campus Map</h4>
+      <div class="map-placeholder mt-3 text-center text-sm">
+        Embedded Google Map Placeholder<br />
+        Dhanmondi Main Campus
+      </div>
+    </section>
+  </div>
+
+  <div class="border-t py-4 text-center text-sm text-muted" style="border-color: var(--border);">
+    <p>&copy; <span data-current-year></span> Prime Scholar Coaching. All rights reserved. | <a href="terms.html" class="hover:underline">Terms & Privacy</a></p>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite">
+  <span id="toastMessage">Success</span>
+</div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>

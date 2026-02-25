@@ -433,13 +433,21 @@ textarea.is-invalid + .field-error {
   background: color-mix(in srgb, var(--bg-soft), transparent 12%);
 }
 
-@media (max-width: 1023px) {
-  .desktop-nav {
-    display: none;
-  }
+.desktop-nav {
+  display: none;
+}
+
+.mobile-only {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 @media (min-width: 1024px) {
+  .desktop-nav {
+    display: flex;
+  }
+
   .mobile-only {
     display: none !important;
   }

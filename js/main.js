@@ -1,9 +1,10 @@
 ﻿(function ($) {
   const App = {
     init() {
-      this.loadSharedLayout();
       this.initGsapPlugins();
       this.initThemeFromStorage();
+      this.initHeader();
+      this.markActiveNav();
       this.initForms();
       this.initInteractiveWidgets();
       this.initFilterTabs();
@@ -16,32 +17,6 @@
       this.initRevealAnimations();
       this.initCardTilt();
       this.bindGlobalEvents();
-    },
-
-    loadSharedLayout() {
-      const loads = [];
-      if ($("#site-header").length) {
-        loads.push(
-          new Promise((resolve) => {
-            $("#site-header").load("components/header.html", () => {
-              this.initHeader();
-              resolve();
-            });
-          })
-        );
-      }
-      if ($("#site-footer").length) {
-        loads.push(
-          new Promise((resolve) => {
-            $("#site-footer").load("components/footer.html", () => {
-              resolve();
-            });
-          })
-        );
-      }
-      Promise.all(loads).then(() => {
-        this.markActiveNav();
-      });
     },
 
     initGsapPlugins() {
