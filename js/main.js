@@ -73,21 +73,25 @@
     initHeader() {
       const drawer = $("#mobileDrawer");
       const backdrop = $("#drawerBackdrop");
+      const toggleBtn = $("#openDrawer");
+
+      const setDrawerState = (isOpen) => {
+        drawer.toggleClass("open", isOpen);
+        backdrop.toggleClass("show", isOpen);
+        $("body").css("overflow", isOpen ? "hidden" : "");
+        toggleBtn.attr("aria-expanded", String(isOpen));
+      };
 
       $(document).on("click", "[data-theme-toggle]", () => {
         this.toggleTheme();
       });
 
       $(document).on("click", "#openDrawer", () => {
-        drawer.addClass("open");
-        backdrop.addClass("show");
-        $("body").css("overflow", "hidden");
+        setDrawerState(!drawer.hasClass("open"));
       });
 
       $(document).on("click", "#closeDrawer, #drawerBackdrop, #mobileDrawer a", () => {
-        drawer.removeClass("open");
-        backdrop.removeClass("show");
-        $("body").css("overflow", "");
+        setDrawerState(false);
       });
     },
 
@@ -333,11 +337,9 @@
     bindGlobalEvents() {
       $(document).on("keydown", (e) => {
         if (e.key === "Escape") {
-          $("#mobileDrawer").removeClass("open");
-          $("#drawerBackdrop").removeClass("show");
+          $("#closeDrawer").trigger("click");
           $("#teacherModal").removeClass("flex").addClass("hidden");
           $("#lightbox").fadeOut(120);
-          $("body").css("overflow", "");
         }
       });
     }

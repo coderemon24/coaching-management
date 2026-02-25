@@ -43,6 +43,7 @@ Premium multi-page static template using:
 
 - Brand tone: trustworthy, energetic, academic excellence.
 - Microcopy mix: Bangla + English (Bangladesh guardian/student friendly).
+- Live Unsplash images are used across hero, programs, gallery, results, teachers, and blog.
 - Dhaka context placeholders included:
   - Branches: Dhanmondi, Mirpur, Uttara, Farmgate
   - Hotline placeholders: +880 1700-xxxxxx

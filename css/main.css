@@ -280,7 +280,7 @@ textarea.is-invalid + .field-error {
   position: fixed;
   top: 0;
   right: -100%;
-  width: min(86vw, 360px);
+  width: 70vw;
   height: 100dvh;
   z-index: 70;
   transition: right 0.26s ease;
