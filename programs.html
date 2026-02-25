@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs | Prime Scholar Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="px-4 py-12 lg:px-8">
+    <section class="reveal mx-auto max-w-7xl">
+      <h1 class="section-title">Programs & Courses</h1>
+      <p class="section-subtitle">Choose a path that matches your class and goal. Filter করে আপনার প্রোগ্রাম দেখুন।</p>
+
+      <div class="mt-7 flex flex-wrap gap-2">
+        <button type="button" class="btn btn-primary" data-group="programs" data-filter-btn="all">All</button>
+        <button type="button" class="btn btn-outline" data-group="programs" data-filter-btn="ssc">SSC</button>
+        <button type="button" class="btn btn-outline" data-group="programs" data-filter-btn="hsc">HSC</button>
+        <button type="button" class="btn btn-outline" data-group="programs" data-filter-btn="admission">Admission</button>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <article class="surface rounded-3xl p-6" data-group="programs" data-filter-item="ssc">
+          <p class="text-xs uppercase tracking-wide text-muted">SSC</p>
+          <h2 class="mt-1 text-xl font-bold">SSC Science Mastery</h2>
+          <p class="mt-2 text-sm text-muted">Duration: 9 months</p>
+          <p class="text-sm text-muted">Fee: BDT 4,500/month</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>- Board CQ/MCQ solution lab</li>
+            <li>- Weekly quiz + parent report</li>
+            <li>- Doubt solving desk</li>
+          </ul>
+          <a href="admission.html" class="btn btn-primary mt-5 w-full">Enroll Now</a>
+        </article>
+
+        <article class="surface rounded-3xl p-6" data-group="programs" data-filter-item="ssc">
+          <p class="text-xs uppercase tracking-wide text-muted">SSC</p>
+          <h2 class="mt-1 text-xl font-bold">SSC English + ICT</h2>
+          <p class="mt-2 text-sm text-muted">Duration: 6 months</p>
+          <p class="text-sm text-muted">Fee: BDT 3,800/month</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>- Grammar to writing mastery</li>
+            <li>- ICT short tricks + model sets</li>
+            <li>- Monthly progress call</li>
+          </ul>
+          <a href="admission.html" class="btn btn-primary mt-5 w-full">Enroll Now</a>
+        </article>
+
+        <article class="surface rounded-3xl p-6" data-group="programs" data-filter-item="hsc">
+          <p class="text-xs uppercase tracking-wide text-muted">HSC</p>
+          <h2 class="mt-1 text-xl font-bold">HSC Science Premium</h2>
+          <p class="mt-2 text-sm text-muted">Duration: 12 months</p>
+          <p class="text-sm text-muted">Fee: BDT 5,800/month</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>- Physics/Chemistry/Math intensive</li>
+            <li>- Practical support + board hacks</li>
+            <li>- Weekly mentor check-in</li>
+          </ul>
+          <a href="admission.html" class="btn btn-primary mt-5 w-full">Enroll Now</a>
+        </article>
+
+        <article class="surface rounded-3xl p-6" data-group="programs" data-filter-item="hsc">
+          <p class="text-xs uppercase tracking-wide text-muted">HSC</p>
+          <h2 class="mt-1 text-xl font-bold">HSC Commerce Track</h2>
+          <p class="mt-2 text-sm text-muted">Duration: 10 months</p>
+          <p class="text-sm text-muted">Fee: BDT 4,900/month</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>- Accounting + Finance mapping</li>
+            <li>- Case-based problem classes</li>
+            <li>- Monthly mock exams</li>
+          </ul>
+          <a href="admission.html" class="btn btn-primary mt-5 w-full">Enroll Now</a>
+        </article>
+
+        <article class="surface rounded-3xl p-6" data-group="programs" data-filter-item="admission">
+          <p class="text-xs uppercase tracking-wide text-muted">Admission</p>
+          <h2 class="mt-1 text-xl font-bold">Medical Crash Program</h2>
+          <p class="mt-2 text-sm text-muted">Duration: 5 months</p>
+          <p class="text-sm text-muted">Fee: BDT 8,500/month</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>- Biology power sessions</li>
+            <li>- Daily smart test</li>
+            <li>- Printed booster sheets</li>
+          </ul>
+          <a href="admission.html" class="btn btn-primary mt-5 w-full">Enroll Now</a>
+        </article>
+
+        <article class="surface rounded-3xl p-6" data-group="programs" data-filter-item="admission">
+          <p class="text-xs uppercase tracking-wide text-muted">Admission</p>
+          <h2 class="mt-1 text-xl font-bold">Engineering Elite (BUET)</h2>
+          <p class="mt-2 text-sm text-muted">Duration: 6 months</p>
+          <p class="text-sm text-muted">Fee: BDT 9,200/month</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>- Advanced math & physics sets</li>
+            <li>- Peer competition labs</li>
+            <li>- Rank predictor dashboard</li>
+          </ul>
+          <a href="admission.html" class="btn btn-primary mt-5 w-full">Enroll Now</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

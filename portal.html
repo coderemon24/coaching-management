@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal Login | Prime Scholar Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="grid min-h-[68vh] place-items-center px-4 py-12">
+    <section class="reveal surface w-full max-w-md rounded-3xl p-6 sm:p-8">
+      <h1 class="text-3xl font-extrabold">Student Portal Login</h1>
+      <p class="mt-2 text-sm text-muted">Access routine, results, notes, and payment history.</p>
+
+      <form class="needs-validation mt-6 space-y-4" aria-label="Student portal login form">
+        <div>
+          <label class="mb-1 block text-sm font-medium" for="portalId">Student ID *</label>
+          <input id="portalId" class="input" required placeholder="PS-2026-001" />
+          <p class="field-error">Student ID is required</p>
+        </div>
+        <div>
+          <label class="mb-1 block text-sm font-medium" for="portalPass">Password *</label>
+          <input id="portalPass" class="input" type="password" required placeholder="Enter password" />
+          <p class="field-error">Password is required</p>
+        </div>
+        <button class="btn btn-primary w-full" type="submit">Login</button>
+      </form>
+
+      <p class="mt-4 text-xs text-muted">Demo template only. Backend authentication required for production.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

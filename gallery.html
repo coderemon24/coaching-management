@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Prime Scholar Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="px-4 py-12 lg:px-8">
+    <section class="reveal mx-auto max-w-7xl">
+      <h1 class="section-title">Campus Gallery</h1>
+      <p class="section-subtitle">Snapshots from classes, seminars, model tests, and success celebrations.</p>
+
+      <div class="masonry mt-8">
+        <figure><img src="assets/images/gallery-1.svg" alt="Classroom session in Dhaka branch" data-lightbox class="w-full rounded-2xl surface-solid p-1" /></figure>
+        <figure><img src="assets/images/gallery-2.svg" alt="Students taking model test" data-lightbox class="w-full rounded-2xl surface-solid p-1" /></figure>
+        <figure><img src="assets/images/gallery-3.svg" alt="Faculty mentoring session" data-lightbox class="w-full rounded-2xl surface-solid p-1" /></figure>
+        <figure><img src="assets/images/gallery-4.svg" alt="Science lab class" data-lightbox class="w-full rounded-2xl surface-solid p-1" /></figure>
+        <figure><img src="assets/images/gallery-5.svg" alt="Guardian meeting" data-lightbox class="w-full rounded-2xl surface-solid p-1" /></figure>
+        <figure><img src="assets/images/gallery-6.svg" alt="Top achiever celebration" data-lightbox class="w-full rounded-2xl surface-solid p-1" /></figure>
+        <figure><img src="assets/images/gallery-7.svg" alt="Admission seminar event" data-lightbox class="w-full rounded-2xl surface-solid p-1" /></figure>
+        <figure><img src="assets/images/gallery-8.svg" alt="Campus library corner" data-lightbox class="w-full rounded-2xl surface-solid p-1" /></figure>
+      </div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox">
+    <button id="closeLightbox" class="btn btn-outline absolute right-4 top-4 text-white" type="button">Close</button>
+    <img id="lightboxImg" src="" alt="Lightbox Preview" />
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Prime Scholar Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="px-4 py-12 lg:px-8">
+    <section class="reveal mx-auto max-w-7xl">
+      <h1 class="section-title">Contact Us</h1>
+      <p class="section-subtitle">Talk to admission team, visit branches, or send your query online.</p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <article class="surface rounded-3xl p-5">
+          <h2 class="text-lg font-bold">Dhanmondi Main Branch</h2>
+          <p class="mt-2 text-sm text-muted">Road 27, Dhaka</p>
+          <p class="mt-2 text-sm">Hotline: +880 1700-100100</p>
+        </article>
+        <article class="surface rounded-3xl p-5">
+          <h2 class="text-lg font-bold">Mirpur Branch</h2>
+          <p class="mt-2 text-sm text-muted">Mirpur 10, Dhaka</p>
+          <p class="mt-2 text-sm">Hotline: +880 1700-100200</p>
+        </article>
+        <article class="surface rounded-3xl p-5">
+          <h2 class="text-lg font-bold">Uttara Branch</h2>
+          <p class="mt-2 text-sm text-muted">Sector 7, Dhaka</p>
+          <p class="mt-2 text-sm">Hotline: +880 1700-100300</p>
+        </article>
+      </div>
+
+      <div class="mt-8 grid gap-6 lg:grid-cols-2">
+        <section class="surface rounded-3xl p-6">
+          <h2 class="text-xl font-bold">Send Us a Message</h2>
+          <form class="needs-validation mt-5 space-y-3">
+            <div>
+              <label class="mb-1 block text-sm font-medium" for="contactName">Name *</label>
+              <input id="contactName" class="input" required placeholder="Your Name" />
+              <p class="field-error">Name is required</p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-medium" for="contactPhone">Phone *</label>
+              <input id="contactPhone" class="input" required placeholder="01XXXXXXXXX" />
+              <p class="field-error">Phone is required</p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-medium" for="contactSubject">Subject *</label>
+              <input id="contactSubject" class="input" required placeholder="Admission / Routine / Fee" />
+              <p class="field-error">Subject is required</p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-medium" for="contactMessage">Message *</label>
+              <textarea id="contactMessage" rows="4" required placeholder="Write your message"></textarea>
+              <p class="field-error">Message is required</p>
+            </div>
+            <button class="btn btn-primary w-full" type="submit">Submit Message</button>
+          </form>
+        </section>
+
+        <section class="space-y-4">
+          <article class="surface rounded-3xl p-6">
+            <h2 class="text-xl font-bold">Hotline & WhatsApp</h2>
+            <p class="mt-2 text-sm text-muted">Quick যোগাযোগের জন্য নিচের options ব্যবহার করুন।</p>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="tel:+8801700000000" class="btn btn-primary">Call Hotline</a>
+              <a href="https://wa.me/8801700000000" class="btn btn-secondary">WhatsApp Chat</a>
+            </div>
+          </article>
+          <article class="surface rounded-3xl p-6">
+            <h2 class="text-xl font-bold">Map</h2>
+            <div class="map-placeholder mt-3">Google Map Embed Placeholder</div>
+          </article>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/8801700000000" class="fixed bottom-6 left-4 btn btn-secondary z-40">WhatsApp</a>
+
+  <div id="site-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

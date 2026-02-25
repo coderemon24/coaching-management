@@ -1,0 +1,12 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'>
+  <defs>
+    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#1d4ed8'/>
+      <stop offset='100%' stop-color='#10b981'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='800' fill='url(#g)' opacity='0.88'/>
+  <rect x='40' y='40' width='1120' height='720' rx='28' fill='white' opacity='0.12'/>
+  <text x='80' y='120' fill='white' font-size='42' font-family='Inter, Segoe UI, sans-serif' font-weight='700'>Prime Scholar Gallery 7</text>
+  <text x='80' y='175' fill='white' font-size='28' font-family='Inter, Segoe UI, sans-serif' opacity='0.9'>Dhaka Campus Activity Placeholder</text>
+</svg>

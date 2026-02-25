@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notice Board | Prime Scholar Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="px-4 py-12 lg:px-8">
+    <section class="reveal mx-auto max-w-7xl">
+      <h1 class="section-title">Notice Board</h1>
+      <p class="section-subtitle">Find exam notices, holiday updates, and admission circulars quickly.</p>
+
+      <div class="mt-7 grid gap-3 md:grid-cols-3">
+        <input id="noticeSearch" class="input md:col-span-2" type="search" placeholder="Search notice... (e.g., exam, holiday, demo)" />
+        <select id="noticeCategory" class="select">
+          <option value="all">All Categories</option>
+          <option value="exam">Exam</option>
+          <option value="admission">Admission</option>
+          <option value="holiday">Holiday</option>
+        </select>
+      </div>
+
+      <div class="mt-8 grid gap-6 lg:grid-cols-3">
+        <section class="space-y-3 lg:col-span-2">
+          <article class="notice-item surface rounded-2xl p-4" data-category="exam" data-search="hsc model test exam routine physics">
+            <p class="text-xs uppercase tracking-wide text-muted">Exam | 06 March, 2026</p>
+            <h2 class="mt-1 text-lg font-bold">HSC Physics Model Test Routine Published</h2>
+            <p class="mt-2 text-sm text-muted">All HSC science students must appear at assigned branch exam hall.</p>
+          </article>
+          <article class="notice-item surface rounded-2xl p-4" data-category="admission" data-search="ssc free demo class admission circular">
+            <p class="text-xs uppercase tracking-wide text-muted">Admission | 09 March, 2026</p>
+            <h2 class="mt-1 text-lg font-bold">SSC Free Demo Class Enrollment Open</h2>
+            <p class="mt-2 text-sm text-muted">First 120 applicants will get diagnostic test support free.</p>
+          </article>
+          <article class="notice-item surface rounded-2xl p-4" data-category="holiday" data-search="branch closed shab e barat holiday">
+            <p class="text-xs uppercase tracking-wide text-muted">Holiday | 15 March, 2026</p>
+            <h2 class="mt-1 text-lg font-bold">Shab-e-Barat: Branch Holiday Notice</h2>
+            <p class="mt-2 text-sm text-muted">All offline classes are suspended; online doubt desk remains active.</p>
+          </article>
+          <article class="notice-item surface rounded-2xl p-4" data-category="exam" data-search="ssc pre test exam seat plan">
+            <p class="text-xs uppercase tracking-wide text-muted">Exam | 18 March, 2026</p>
+            <h2 class="mt-1 text-lg font-bold">SSC Pre-Test Seat Plan Released</h2>
+            <p class="mt-2 text-sm text-muted">Download seat plan from student desk or collect from branch reception.</p>
+          </article>
+        </section>
+
+        <aside class="surface rounded-3xl p-5">
+          <p class="text-xs uppercase tracking-wide text-muted">Single Notice Template</p>
+          <h3 class="mt-2 text-xl font-bold">Notice Title Goes Here</h3>
+          <p class="mt-2 text-sm text-muted">Category: Admission | Date: DD Month, YYYY</p>
+          <div class="glow-line my-4"></div>
+          <p class="text-sm">This panel is the sample structure for a detailed single notice page content. You can reuse this layout and populate full details, attachments, and branch instructions.</p>
+          <a href="#" class="btn btn-outline mt-5">Download Attachment</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachers | Prime Scholar Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="px-4 py-12 lg:px-8">
+    <section class="reveal mx-auto max-w-7xl">
+      <h1 class="section-title">Meet Our Teachers</h1>
+      <p class="section-subtitle">Academic excellence starts with exceptional mentors. Experienced faculty from top institutions.</p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="surface rounded-3xl p-6">
+          <div class="mb-4 h-14 w-14 rounded-2xl brand-gradient"></div>
+          <h2 class="text-xl font-bold">Md. Sayed Rahman</h2>
+          <p class="text-sm text-muted">HSC Physics Faculty</p>
+          <p class="mt-3 text-sm">BUET graduate, 11+ years teaching experience.</p>
+          <button class="btn btn-outline mt-5" data-teacher-btn data-name="Md. Sayed Rahman" data-subject="HSC Physics Faculty" data-experience="11 years" data-bio="Known for simplifying complex numerical concepts and exam-focused problem solving.">View Profile</button>
+        </article>
+
+        <article class="surface rounded-3xl p-6">
+          <div class="mb-4 h-14 w-14 rounded-2xl brand-gradient"></div>
+          <h2 class="text-xl font-bold">Farhana Islam</h2>
+          <p class="text-sm text-muted">SSC English & ICT</p>
+          <p class="mt-3 text-sm">DU graduate, language and communication specialist.</p>
+          <button class="btn btn-outline mt-5" data-teacher-btn data-name="Farhana Islam" data-subject="SSC English & ICT" data-experience="8 years" data-bio="Focuses on writing structure, grammar fluency, and board exam time management.">View Profile</button>
+        </article>
+
+        <article class="surface rounded-3xl p-6">
+          <div class="mb-4 h-14 w-14 rounded-2xl brand-gradient"></div>
+          <h2 class="text-xl font-bold">Dr. Imran Kabir</h2>
+          <p class="text-sm text-muted">Medical Admission Biology</p>
+          <p class="mt-3 text-sm">Medical graduate, admission coaching expert.</p>
+          <button class="btn btn-outline mt-5" data-teacher-btn data-name="Dr. Imran Kabir" data-subject="Medical Admission Biology" data-experience="9 years" data-bio="Leads high-accuracy biology sessions with chapter-level test analytics.">View Profile</button>
+        </article>
+
+        <article class="surface rounded-3xl p-6">
+          <div class="mb-4 h-14 w-14 rounded-2xl brand-gradient"></div>
+          <h2 class="text-xl font-bold">Nabila Ahmed</h2>
+          <p class="text-sm text-muted">HSC Chemistry</p>
+          <p class="mt-3 text-sm">Chemistry Olympiad mentor, concept-first teaching style.</p>
+          <button class="btn btn-outline mt-5" data-teacher-btn data-name="Nabila Ahmed" data-subject="HSC Chemistry" data-experience="7 years" data-bio="Specialized in organic reaction mapping and quick revision frameworks.">View Profile</button>
+        </article>
+
+        <article class="surface rounded-3xl p-6">
+          <div class="mb-4 h-14 w-14 rounded-2xl brand-gradient"></div>
+          <h2 class="text-xl font-bold">Tahsin Chowdhury</h2>
+          <p class="text-sm text-muted">Admission Math</p>
+          <p class="mt-3 text-sm">Engineering entrance exam strategist.</p>
+          <button class="btn btn-outline mt-5" data-teacher-btn data-name="Tahsin Chowdhury" data-subject="Admission Math" data-experience="10 years" data-bio="Teaches advanced short methods with strict speed-accuracy routines.">View Profile</button>
+        </article>
+
+        <article class="surface rounded-3xl p-6">
+          <div class="mb-4 h-14 w-14 rounded-2xl brand-gradient"></div>
+          <h2 class="text-xl font-bold">Sadia Noor</h2>
+          <p class="text-sm text-muted">Student Mentor</p>
+          <p class="mt-3 text-sm">Handles study planning and guardian follow-up.</p>
+          <button class="btn btn-outline mt-5" data-teacher-btn data-name="Sadia Noor" data-subject="Student Mentor" data-experience="6 years" data-bio="Supports habit building, routine optimization, and parent communication.">View Profile</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <section id="teacherModal" class="fixed inset-0 z-[90] hidden items-center justify-center bg-slate-950/70 p-4">
+    <div class="surface-solid w-full max-w-lg rounded-3xl p-6">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 id="teacherModalName" class="text-2xl font-extrabold">Teacher Name</h2>
+          <p id="teacherModalSubject" class="text-sm text-muted">Subject</p>
+        </div>
+        <button id="closeTeacherModal" class="btn btn-outline p-2" aria-label="Close profile">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <p class="mt-4 text-sm"><strong>Experience:</strong> <span id="teacherModalExp"></span></p>
+      <p id="teacherModalBio" class="mt-3 text-muted"></p>
+      <div class="mt-6">
+        <a href="admission.html" class="btn btn-primary">Book Demo with Faculty</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
