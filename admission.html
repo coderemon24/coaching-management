@@ -21,7 +21,7 @@
       </span>
     </a>
 
-    <div class="desktop-nav hidden items-center gap-6 lg:flex">
+    <div class="desktop-nav hidden items-center gap-5 lg:flex">
       <a class="nav-link" data-nav="index.html" href="index.html">Home</a>
       <a class="nav-link" data-nav="about.html" href="about.html">About</a>
       <a class="nav-link" data-nav="programs.html" href="programs.html">Programs</a>
@@ -29,8 +29,25 @@
       <a class="nav-link" data-nav="teachers.html" href="teachers.html">Teachers</a>
       <a class="nav-link" data-nav="results.html" href="results.html">Results</a>
       <a class="nav-link" data-nav="contact.html" href="contact.html">Contact</a>
-    </div>
 
+      <div class="desktop-dropdown">
+        <button class="nav-link desktop-dropdown-trigger inline-flex items-center gap-1" type="button" aria-haspopup="true">
+          More
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+        <div class="desktop-dropdown-menu">
+          <a class="desktop-dropdown-link nav-link" data-nav="admission.html" href="admission.html">Admission</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="notice.html" href="notice.html">Notices</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="gallery.html" href="gallery.html">Gallery</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="blog.html" href="blog.html">Blog</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="faq.html" href="faq.html">FAQ</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="pricing.html" href="pricing.html">Pricing</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="portal.html" href="portal.html">Student Portal</a>
+        </div>
+      </div>
+    </div>
     <div class="hidden items-center gap-2 lg:flex">
       <button class="btn btn-outline p-2" type="button" data-theme-toggle aria-label="Toggle dark mode">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
@@ -237,8 +254,7 @@
     <section>
       <h4 class="text-lg font-bold">Campus Map</h4>
       <div class="map-placeholder mt-3 text-center text-sm">
-        Embedded Google Map Placeholder<br />
-        Dhanmondi Main Campus
+        <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7303.812181652402!2d90.38687900000001!3d23.750728!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9ac5fce59cb%3A0xfd3e17cbaa2f7805!2sKaizen%20IT%20Ltd.!5e0!3m2!1sen!2sbd!4v1772046087568!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
   </div>

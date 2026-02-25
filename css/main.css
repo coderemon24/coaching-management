@@ -137,6 +137,53 @@ a:focus-visible {
   color: var(--primary);
 }
 
+.desktop-dropdown {
+  position: relative;
+}
+
+.desktop-dropdown-trigger {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.desktop-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.65rem);
+  min-width: 210px;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface-solid), transparent 8%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  padding: 0.45rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 80;
+}
+
+.desktop-dropdown-link {
+  display: block;
+  padding: 0.56rem 0.7rem;
+  border-radius: 0.7rem;
+}
+
+.desktop-dropdown:hover .desktop-dropdown-menu,
+.desktop-dropdown:focus-within .desktop-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.desktop-dropdown-link:hover {
+  background: color-mix(in srgb, var(--primary), transparent 92%);
+}
+
 .section-title {
   font-size: clamp(1.55rem, 1rem + 2vw, 2.5rem);
   line-height: 1.2;
@@ -426,11 +473,51 @@ textarea.is-invalid + .field-error {
 .map-placeholder {
   min-height: 240px;
   border-radius: 1rem;
-  border: 1px dashed color-mix(in srgb, var(--text-muted), transparent 45%);
-  display: grid;
-  place-items: center;
-  color: var(--text-muted);
+  border: 1px solid var(--border);
+  overflow: hidden;
   background: color-mix(in srgb, var(--bg-soft), transparent 12%);
+}
+
+.map-embed {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  display: block;
+}
+
+.marquee-viewport {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.marquee-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-track > * {
+  flex: 0 0 min(300px, 84vw);
+}
+
+.marquee-track[data-marquee-style="notices"] > * {
+  flex-basis: min(360px, 90vw);
+}
+
+@media (min-width: 1024px) {
+  .marquee-track[data-marquee-style="highlights"] > * {
+    flex-basis: 260px;
+  }
+
+  .marquee-track[data-marquee-style="notices"] > * {
+    flex-basis: 360px;
+  }
 }
 
 .desktop-nav {

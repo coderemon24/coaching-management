@@ -16,6 +16,7 @@
       this.initCountUp();
       this.initRevealAnimations();
       this.initCardTilt();
+      this.initAutoMarquees();
       this.bindGlobalEvents();
     },
 
@@ -74,7 +75,12 @@
     markActiveNav() {
       const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
       $("[data-nav]").removeClass("active");
-      $(`[data-nav='${file}']`).addClass("active");
+      const activeLink = $(`[data-nav='${file}']`);
+      activeLink.addClass("active");
+
+      if (activeLink.closest(".desktop-dropdown-menu").length) {
+        activeLink.closest(".desktop-dropdown").find(".desktop-dropdown-trigger").addClass("active");
+      }
     },
 
     initRevealAnimations() {
@@ -185,6 +191,160 @@
         card.addEventListener("mouseleave", () => {
           card.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg)";
         });
+      });
+    },
+
+    initAutoMarquees() {
+      if (!window.gsap) return;
+
+      const tracks = document.querySelectorAll("[data-marquee]");
+      tracks.forEach((track) => {
+        if (track.dataset.marqueeInited === "true") return;
+
+        const items = Array.from(track.children);
+        if (items.length < 2) return;
+
+        const viewport = document.createElement("div");
+        viewport.className = "marquee-viewport";
+        track.parentNode.insertBefore(viewport, track);
+        viewport.appendChild(track);
+
+        track.classList.add("marquee-track");
+
+        const duration = Number(track.getAttribute("data-marquee-duration")) || 22;
+        const state = {
+          minX: 0,
+          maxX: 0,
+          dir: track.getAttribute("data-marquee") === "ltr" ? 1 : -1,
+          tween: null,
+          dragging: false,
+          pointerId: null,
+          startClientX: 0,
+          lastClientX: 0,
+          startX: 0,
+          moved: false,
+          justDragged: false
+        };
+
+        const clamp = (value) => Math.min(state.maxX, Math.max(state.minX, value));
+
+        const stopTween = () => {
+          if (state.tween) {
+            state.tween.kill();
+            state.tween = null;
+          }
+        };
+
+        const animateToEdge = () => {
+          const currentX = Number(gsap.getProperty(track, "x")) || 0;
+          const targetX = state.dir > 0 ? state.maxX : state.minX;
+          const distance = Math.abs(targetX - currentX);
+          const fullDistance = Math.max(1, state.maxX - state.minX);
+
+          if (distance < 1) {
+            state.dir *= -1;
+            requestAnimationFrame(animateToEdge);
+            return;
+          }
+
+          const segmentDuration = Math.max(0.55, (distance / fullDistance) * duration);
+          stopTween();
+          state.tween = gsap.to(track, {
+            x: targetX,
+            duration: segmentDuration,
+            ease: "none",
+            onComplete: () => {
+              state.dir *= -1;
+              animateToEdge();
+            }
+          });
+        };
+
+        const refresh = () => {
+          const overflow = Math.max(0, track.scrollWidth - viewport.clientWidth);
+          state.minX = -overflow;
+          state.maxX = 0;
+          const currentX = Number(gsap.getProperty(track, "x")) || 0;
+          gsap.set(track, { x: clamp(currentX) });
+
+          if (overflow > 0) {
+            animateToEdge();
+          } else {
+            stopTween();
+          }
+        };
+
+        const onPointerDown = (e) => {
+          if (state.maxX === state.minX) return;
+          state.dragging = true;
+          state.pointerId = e.pointerId;
+          state.startClientX = e.clientX;
+          state.lastClientX = e.clientX;
+          state.startX = Number(gsap.getProperty(track, "x")) || 0;
+          state.moved = false;
+          state.justDragged = false;
+          stopTween();
+          viewport.classList.add("is-dragging");
+          if (viewport.setPointerCapture) {
+            viewport.setPointerCapture(e.pointerId);
+          }
+        };
+
+        const onPointerMove = (e) => {
+          if (!state.dragging) return;
+          if (state.pointerId !== null && e.pointerId !== state.pointerId) return;
+
+          const delta = e.clientX - state.startClientX;
+          if (Math.abs(delta) > 3) {
+            state.moved = true;
+          }
+
+          const nextX = clamp(state.startX + delta);
+          gsap.set(track, { x: nextX });
+
+          if (e.clientX !== state.lastClientX) {
+            state.dir = e.clientX > state.lastClientX ? 1 : -1;
+            state.lastClientX = e.clientX;
+          }
+        };
+
+        const onPointerEnd = (e) => {
+          if (!state.dragging) return;
+          if (state.pointerId !== null && e.pointerId !== state.pointerId) return;
+
+          state.dragging = false;
+          state.pointerId = null;
+          state.justDragged = state.moved;
+          viewport.classList.remove("is-dragging");
+          if (viewport.releasePointerCapture) {
+            viewport.releasePointerCapture(e.pointerId);
+          }
+          animateToEdge();
+        };
+
+        viewport.addEventListener("pointerdown", onPointerDown);
+        viewport.addEventListener("pointermove", onPointerMove);
+        window.addEventListener("pointerup", onPointerEnd);
+        window.addEventListener("pointercancel", onPointerEnd);
+        viewport.addEventListener(
+          "click",
+          (e) => {
+            if (state.justDragged) {
+              e.preventDefault();
+              e.stopPropagation();
+              state.justDragged = false;
+            }
+          },
+          true
+        );
+
+        refresh();
+        window.addEventListener("resize", () => {
+          clearTimeout(track.__marqueeResizeTimer);
+          track.__marqueeResizeTimer = setTimeout(refresh, 140);
+        });
+
+        track.dataset.marqueeInited = "true";
       });
     },
 

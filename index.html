@@ -22,7 +22,7 @@
       </span>
     </a>
 
-    <div class="desktop-nav hidden items-center gap-6 lg:flex">
+    <div class="desktop-nav hidden items-center gap-5 lg:flex">
       <a class="nav-link" data-nav="index.html" href="index.html">Home</a>
       <a class="nav-link" data-nav="about.html" href="about.html">About</a>
       <a class="nav-link" data-nav="programs.html" href="programs.html">Programs</a>
@@ -30,8 +30,25 @@
       <a class="nav-link" data-nav="teachers.html" href="teachers.html">Teachers</a>
       <a class="nav-link" data-nav="results.html" href="results.html">Results</a>
       <a class="nav-link" data-nav="contact.html" href="contact.html">Contact</a>
-    </div>
 
+      <div class="desktop-dropdown">
+        <button class="nav-link desktop-dropdown-trigger inline-flex items-center gap-1" type="button" aria-haspopup="true">
+          More
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+        <div class="desktop-dropdown-menu">
+          <a class="desktop-dropdown-link nav-link" data-nav="admission.html" href="admission.html">Admission</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="notice.html" href="notice.html">Notices</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="gallery.html" href="gallery.html">Gallery</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="blog.html" href="blog.html">Blog</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="faq.html" href="faq.html">FAQ</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="pricing.html" href="pricing.html">Pricing</a>
+          <a class="desktop-dropdown-link nav-link" data-nav="portal.html" href="portal.html">Student Portal</a>
+        </div>
+      </div>
+    </div>
     <div class="hidden items-center gap-2 lg:flex">
       <button class="btn btn-outline p-2" type="button" data-theme-toggle aria-label="Toggle dark mode">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
@@ -115,8 +132,21 @@
           <div class="brand-gradient rounded-3xl p-1">
             <div class="rounded-[1.35rem] bg-white/80 p-6 dark:bg-slate-900/70" style="background: color-mix(in srgb, var(--surface-solid), transparent 12%);">
               <div class="relative mb-5 overflow-hidden rounded-2xl">
-                <img src="assets/images/3.webp" alt="Students in a modern coaching classroom" class="h-52 w-full object-cover" />
-                <span class="absolute left-3 top-3 rounded-full bg-slate-900/70 px-3 py-1 text-xs font-semibold text-white">Dhaka Live Class</span>
+                <iframe
+                  class="h-52 w-full"
+                  src="https://www.youtube.com/embed/PHJVAQ6kFHM?autoplay=1&mute=1&loop=1&playlist=PHJVAQ6kFHM&controls=0&modestbranding=1&rel=0&playsinline=1"
+                  title="Prime Scholar Weekly Performance Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <div class="absolute flex gap-3 items-center left-3 top-3 rounded-full bg-slate-900/70 px-3 py-1 text-xs font-semibold text-white">
+                  <span class="relative flex size-3">
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75"></span>
+                    <span class="relative inline-flex size-3 rounded-full bg-red-600"></span>
+                  </span>
+                  <span>Dhaka Live Class</span>
+                </div>
               </div>
               <h2 class="hero-reveal text-2xl font-extrabold">Weekly Performance Snapshot</h2>
               <p class="hero-reveal mt-2 text-sm text-muted">Guardian update + student progress report every week.</p>
@@ -147,14 +177,33 @@
     <section class="reveal px-4 pb-8 lg:px-8">
       <div class="mx-auto grid max-w-7xl gap-4 sm:grid-cols-3">
         <article class="surface rounded-3xl p-6 text-center">
+          <span class="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl brand-gradient text-slate-900">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 14a4 4 0 1 0-8 0" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.5 18a5.5 5.5 0 0 1 11 0" />
+              <circle cx="12" cy="9" r="3" />
+            </svg>
+          </span>
           <p class="text-sm text-muted">Students Mentored</p>
           <p class="mt-2 text-3xl font-black" data-counter="8500">0</p>
         </article>
         <article class="surface rounded-3xl p-6 text-center">
+          <span class="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl brand-gradient text-slate-900">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4 14 4-4 3 3 5-5 4 4" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 19h16" />
+            </svg>
+          </span>
           <p class="text-sm text-muted">Success Rate</p>
           <p class="mt-2 text-3xl font-black"><span data-counter="94">0</span>%</p>
         </article>
         <article class="surface rounded-3xl p-6 text-center">
+          <span class="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl brand-gradient text-slate-900">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+              <rect x="4" y="4" width="16" height="16" rx="3" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 2v4M16 2v4M8 12h8M8 16h5" />
+            </svg>
+          </span>
           <p class="text-sm text-muted">Years of Excellence</p>
           <p class="mt-2 text-3xl font-black" data-counter="12">0</p>
         </article>
@@ -247,7 +296,7 @@
       <div class="mx-auto max-w-7xl">
         <h2 class="section-title">Success Highlights</h2>
         <p class="section-subtitle">Top achievers from Dhaka branches. আলহামদুলিল্লাহ, this year results were remarkable.</p>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-marquee="ltr" data-marquee-style="highlights" data-marquee-duration="24">
           <article class="surface rounded-3xl p-5">
             <img src="assets/images/2.jpg" alt="Top achiever student portrait" class="h-36 w-full rounded-2xl object-cover" loading="lazy" />
             <p class="mt-4 text-sm text-muted">HSC 2025</p>
@@ -308,7 +357,7 @@
           </div>
           <a href="notice.html" class="btn btn-outline">All Notices</a>
         </div>
-        <div class="grid gap-4 md:grid-cols-3">
+        <div class="grid gap-4 md:grid-cols-3" data-marquee="rtl" data-marquee-style="notices" data-marquee-duration="22">
           <article class="notice-item surface rounded-3xl p-5">
             <p class="text-xs uppercase tracking-wide text-muted">Exam Update</p>
             <h3 class="mt-2 text-lg font-bold">HSC Physics Model Test - Friday</h3>
@@ -385,8 +434,7 @@
     <section>
       <h4 class="text-lg font-bold">Campus Map</h4>
       <div class="map-placeholder mt-3 text-center text-sm">
-        Embedded Google Map Placeholder<br />
-        Dhanmondi Main Campus
+        <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7303.812181652402!2d90.38687900000001!3d23.750728!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9ac5fce59cb%3A0xfd3e17cbaa2f7805!2sKaizen%20IT%20Ltd.!5e0!3m2!1sen!2sbd!4v1772046087568!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
   </div>
