@@ -80,6 +80,7 @@
         backdrop.toggleClass("show", isOpen);
         $("body").css("overflow", isOpen ? "hidden" : "");
         toggleBtn.attr("aria-expanded", String(isOpen));
+        toggleBtn.toggleClass("is-open", isOpen);
       };
 
       $(document).on("click", "[data-theme-toggle]", () => {
