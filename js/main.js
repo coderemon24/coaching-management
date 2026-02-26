@@ -216,6 +216,7 @@
           minX: 0,
           maxX: 0,
           dir: track.getAttribute("data-marquee") === "ltr" ? 1 : -1,
+          hasInitialPosition: false,
           tween: null,
           dragging: false,
           pointerId: null,
@@ -264,8 +265,15 @@
           const overflow = Math.max(0, track.scrollWidth - viewport.clientWidth);
           state.minX = -overflow;
           state.maxX = 0;
-          const currentX = Number(gsap.getProperty(track, "x")) || 0;
-          gsap.set(track, { x: clamp(currentX) });
+
+          if (!state.hasInitialPosition) {
+            const initialX = state.dir > 0 ? state.minX : state.maxX;
+            gsap.set(track, { x: clamp(initialX) });
+            state.hasInitialPosition = true;
+          } else {
+            const currentX = Number(gsap.getProperty(track, "x")) || 0;
+            gsap.set(track, { x: clamp(currentX) });
+          }
 
           if (overflow > 0) {
             animateToEdge();
@@ -322,10 +330,26 @@
           animateToEdge();
         };
 
+        const onMouseEnter = () => {
+          stopTween();
+        };
+
+        const onMouseLeave = () => {
+          if (state.dragging) return;
+          if (state.maxX === state.minX) return;
+          animateToEdge();
+        };
+
+        track.querySelectorAll("img").forEach((img) => {
+          img.setAttribute("draggable", "false");
+        });
+
         viewport.addEventListener("pointerdown", onPointerDown);
         viewport.addEventListener("pointermove", onPointerMove);
         window.addEventListener("pointerup", onPointerEnd);
         window.addEventListener("pointercancel", onPointerEnd);
+        viewport.addEventListener("mouseenter", onMouseEnter);
+        viewport.addEventListener("mouseleave", onMouseLeave);
         viewport.addEventListener(
           "click",
           (e) => {

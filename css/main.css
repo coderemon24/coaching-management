@@ -506,6 +506,58 @@ textarea.is-invalid + .field-error {
   flex: 0 0 min(300px, 84vw);
 }
 
+.success-highlights-row {
+  --success-gap: 1rem;
+  --success-cards-per-row: 1;
+}
+
+.notice-marquee-row {
+  --notice-gap: 1rem;
+  --notice-cards-per-row: 1;
+}
+
+@media (min-width: 640px) {
+  .success-highlights-row {
+    --success-cards-per-row: 2;
+  }
+
+  .notice-marquee-row {
+    --notice-cards-per-row: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .success-highlights-row {
+    --success-cards-per-row: 4;
+  }
+
+  .notice-marquee-row {
+    --notice-cards-per-row: 4;
+  }
+}
+
+.marquee-track[data-marquee-style="highlights-row"] {
+  width: 100%;
+  gap: var(--success-gap);
+}
+
+.marquee-track[data-marquee-style="highlights-row"] > * {
+  flex: 0 0 calc((100% - (var(--success-gap) * (var(--success-cards-per-row) - 1))) / var(--success-cards-per-row));
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.marquee-track[data-marquee-style="notices-row"] {
+  width: 100%;
+  gap: var(--notice-gap);
+}
+
+.marquee-track[data-marquee-style="notices-row"] > * {
+  flex: 0 0 calc((100% - (var(--notice-gap) * (var(--notice-cards-per-row) - 1))) / var(--notice-cards-per-row));
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .marquee-track[data-marquee-style="notices"] > * {
   flex-basis: min(360px, 90vw);
 }
